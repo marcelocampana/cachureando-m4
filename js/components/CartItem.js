@@ -22,7 +22,7 @@ export default function CartItem() {
       <h3 class="h6 product-title mb-2">
         <a href="marketplace-single.html">Titulo del Producto</a>
       </h3>
-      <div class="d-inline-block text-accent">$1800</div>
+      <div class="d-inline-block text-accent">$1.800</div>
       <div class="form-inline pt-2">
         <input
           type="number"
