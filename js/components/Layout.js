@@ -1,16 +1,18 @@
 import { html } from "../../utils/htmlRaw.js";
-
+import displayStoreComponent from "../../utils/displayStoreComponent.js";
 import { menus } from "../../data/menu.js";
 
-function menu(label) {
+function menu(label, link) {
   return html`<li class="nav-item">
-    <a class="nav-link" href="#" style="color:#fff"> ${label} </a>
+    <a class="nav-link" id="nav-${link}" href="#" style="color:#fff">
+      ${label}
+    </a>
   </li>`;
 }
 
 export function Navbar() {
   return html` 
-  <div class="container-fluid mt-1" style="background-color: #3f51b5; color:#fff">
+  <div class="container-fluid" style="background-color: #3f51b5; color:#fff">
     <nav
       class="navbar navbar-expand-lg navbar-light px-2"
       style="background-color: #3f51b5; color:#fff"
@@ -29,7 +31,7 @@ export function Navbar() {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-         ${menus.map((item) => menu(item.label)).join("")}
+         ${menus.map((item) => menu(item.label, item.link)).join("")}
          
         </ul>
       </div>
