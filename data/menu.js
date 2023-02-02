@@ -1,4 +1,4 @@
 export const menus = [
-  { label: "Catálogo", link: "product-grid" },
-  { label: "Carrito", link: "product-cart" },
+  { label: "Catálogo", link: "/index.html" },
+  { label: "Carrito", link: "/cart.html" },
 ];

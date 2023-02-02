@@ -5,7 +5,7 @@ export default function CartNav() {
     class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3"
   >
     <div class="py-1">
-      <a class="btn btn-outline-accent btn-sm" href="marketplace-category.html"
+      <a class="btn btn-outline-accent btn-sm" href="/index.html"
         ><i class="ci-arrow-left me-1 ms-n1"></i>Seguir comprando</a
       >
     </div>

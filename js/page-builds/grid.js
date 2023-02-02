@@ -1,11 +1,10 @@
 /* ---Imports ---*/
-import Carrousel from "./components/Carrousel.js";
+import Carrousel from "../components/Carrousel.js";
 
-import ProductGrid from "./components/ProductGrid.js";
+import ProductGrid from "../components/ProductGrid.js";
 
-import displayStoreComponent from "../utils/displayStoreComponent.js";
-import Cart from "./components/Cart.js";
-import { products } from "../data/products2.js";
+import displayStoreComponent from "../../utils/displayStoreComponent.js";
+import Cart from "../components/Cart.js";
 
 /* const navProductGrid = document.getElementById(`nav-product-grid`);
 navProductGrid.addEventListener("click", function () {
@@ -33,10 +32,3 @@ productGrid.innerHTML += ProductGrid();
 
 /* ---Pagina Detalle del producto --- */
 //const productDetail = document.getElementById("product-detail");
-
-/* ---Carrito --- */
-function renderCart() {
-  displayStoreComponent("cart");
-  const productCart = document.getElementById("cart");
-  productCart.innerHTML = Cart();
-}

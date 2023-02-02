@@ -4,7 +4,7 @@ import { menus } from "../../data/menu.js";
 
 function menu(label, link) {
   return html`<li class="nav-item">
-    <a class="nav-link" id="nav-${link}" href="#" style="color:#fff">
+    <a class="nav-link" id="nav-${link}" href="${link}" style="color:#fff">
       ${label}
     </a>
   </li>`;
@@ -17,7 +17,7 @@ export function Navbar() {
       class="navbar navbar-expand-lg navbar-light px-2"
       style="background-color: #3f51b5; color:#fff"
     >
-      <a class="navbar-brand" href="#" style="color:#fff"> Navbar </a>
+      <a class="navbar-brand" href="/" style="color:#fff"> Festina </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -153,3 +153,9 @@ export function Footer() {
     </div>
     <!-- End of .container -->`;
 }
+
+/* ---Navbar y Footer ---*/
+const nav = document.getElementById("nav");
+nav.innerHTML = Navbar();
+const footer = document.getElementById("footer");
+footer.innerHTML = Footer();
