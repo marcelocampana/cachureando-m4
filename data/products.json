@@ -32,7 +32,8 @@
       "brand": "Festina",
       "description": "Reloj para Hombre F20542/4 Azul/Gris",
       "price": 128000,
-      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113064291_504090_1?wid=800&hei=800&qlt=70"
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113064291_504090_1?wid=800&hei=800&qlt=70",
+      "stock": 5
     },
     {
       "id": 5,
@@ -51,6 +52,58 @@
       "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113064377_503633_1?wid=800&hei=800&qlt=70",
       "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
       "stock": 5
-    }
+    },
+    {
+      "id": 7,
+      "brand": "Festina",
+      "description": "Reloj para Hombre F20544/5 Azul Zafiro",
+      "price": 207000,
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113036395_504228_1?wid=1500&hei=1500&qlt=70",
+      "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
+      "stock": 5
+    },
+    {
+      "id": 8,
+      "brand": "Festina",
+      "description": "Reloj F20150/4 Festina Swiss Hombre Swiss Made",
+      "price": 221990,
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_115767003_1258407_1?wid=1500&hei=1500&qlt=70",
+      "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
+      "stock": 5
+    },
+    { "id": 9,
+      "brand": "Festina",
+      "description": "Reloj para Hombre F20535/1 Negro",
+      "price": 242000,
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113064270_503586_1?wid=1500&hei=1500&qlt=70",
+      "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
+      "stock": 5
+    },
+    {"id": 10,
+      "brand": "Festina",
+      "description": "Reloj para Niño F20345/2 Azul",
+      "price": 102000,
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113021609_497311_1?wid=1500&hei=1500&qlt=70",
+      "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
+      "stock": 5
+    },
+    {"id": 11,
+      "brand": "Festina",
+      "description": "Reloj para Mujer F20412/2 Rosa",
+      "price": 107000,
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113063821_502968_1?wid=1500&hei=1500&qlt=70",
+      "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
+      "stock": 5
+     },
+     {"id": 12,
+      "brand": "Festina",
+      "description": "Reloj Festina para hombre F205411",
+      "price": 228.990,
+      "imageUrl": "https://falabella.scene7.com/is/image/Falabella/gsc_113036386_504223_1?wid=1500&hei=1500&qlt=70",
+      "features": "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
+      "stock": 5
+
+     }
+
   ]
 }
