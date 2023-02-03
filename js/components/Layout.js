@@ -55,6 +55,7 @@ export function Footer() {
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
                   <a href="#!" class="text-white">About us</a>
+                  <h6>Relojes</h6>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -63,6 +64,7 @@ export function Footer() {
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
                   <a href="#!" class="text-white">Products</a>
+                  <h6>Joyas</h6>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -71,6 +73,7 @@ export function Footer() {
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
                   <a href="#!" class="text-white">Awards</a>
+                  <h6>Novedades</h6>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -79,6 +82,7 @@ export function Footer() {
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
                   <a href="#!" class="text-white">Help</a>
+                  <h6>Servicio al Cliente</h6>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -87,6 +91,7 @@ export function Footer() {
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
                   <a href="#!" class="text-white">Contact</a>
+                  <h6>Ofertas</h6>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -102,10 +107,9 @@ export function Footer() {
             <div class="row d-flex justify-content-center">
               <div class="col-lg-8">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                  distinctio earum repellat quaerat voluptatibus placeat nam,
-                  commodi optio pariatur est quia magnam eum harum corrupti
-                  dicta, aliquam sequi voluptate quas.
+                Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad.
+                Festina ofrece diseños distinguidos e innovación tecnológica constante.
+                Las nuevas tecnologías aplicadas tanto a diseños clásicos como de tendencia han convertido Festina en una marca de relojes líderes en el mundo.
                 </p>
               </div>
             </div>
@@ -142,7 +146,7 @@ export function Footer() {
           class="text-center p-3"
           style="background-color: rgba(0, 0, 0, 0.2)"
         >
-          © 2020 Copyright:
+          © 2023 Copyright:
           <a class="text-white" href="https://mdbootstrap.com/"
             >MDBootstrap.com</a
           >
