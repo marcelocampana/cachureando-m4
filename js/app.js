@@ -1,3 +1,4 @@
+let productsInCard = [];
 /* ---Imports ---*/
 import Carrousel from "./components/Carrousel.js";
 import { Footer, Navbar } from "./components/Layout.js";
@@ -44,11 +45,46 @@ function renderProductDetail(id) {
   displayStoreComponent("product-detail");
   const productDetail = document.getElementById("product-detail");
   productDetail.innerHTML = ProductDetail(id);
+  const backGridDetailButton = document.getElementById(
+    "back-grid-detail-button"
+  );
+  backGridDetailButton.addEventListener("click", function () {
+    displayStoreComponent("product-grid");
+  });
+  const addToCartButton = document.getElementById("add-to-cart-button");
+
+  addToCartButton.addEventListener("click", function () {
+    const productDetailQuantity = document.getElementById(
+      "quantity-detail-input"
+    );
+
+    products.forEach((product) => {
+      if (product.id === id) {
+        const productPlusQuantity = {
+          ...product,
+          quantity: productDetailQuantity.value,
+        };
+        productsInCard.push(productPlusQuantity);
+      }
+    });
+    displayStoreComponent("cart");
+    renderCart(id, productsInCard);
+  });
 }
 
 /* ---Carrito --- */
-function renderCart() {
+
+function renderCart(id, productsInToCard) {
   displayStoreComponent("cart");
   const productCart = document.getElementById("cart");
-  productCart.innerHTML = Cart();
+  productCart.innerHTML = Cart(id, productsInToCard);
+  const backGridCartButton = document.getElementById("back-grid-cart-button");
+  backGridCartButton.addEventListener("click", function () {
+    displayStoreComponent("product-grid");
+  });
+  const resetCartButton = document.getElementById("reset-cart-button");
+  resetCartButton.addEventListener("click", function () {
+    productsInCard = [];
+    renderCart(0, productsInCard);
+  });
 }

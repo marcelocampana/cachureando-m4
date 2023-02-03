@@ -8,54 +8,58 @@ export default function ProductGrid(id) {
     <!-- Imagen de producto-->
 
     <div class="col-lg-6">
-      <div class="position-relative rounded-3 overflow-hidden mb-lg-4 mb-2">
+      <div
+        class="position-relative rounded-3 overflow-hidden mb-lg-4 mb-2 border border-secondary-subtle"
+      >
         <img
           style="height: 400px;"
-          src="https://cdn.pixabay.com/photo/2017/01/28/14/16/clock-2015460_960_720.jpg"
+          class="border-secondary"
+          src="${product[0].imageUrl}"
           alt="Product image"
         />
-        <div class="image-zoom-pane"></div>
       </div>
       <div class="pt-2 text-lg-start text-center"></div>
     </div>
     <!-- Detalles del Producto-->
     <div class="col-lg-6">
       <div class="ps-xl-5 ps-lg-3">
-        <h2 class="h3 mb-3">${product[0].product}</h2>
-        <div
-          class="d-flex align-items-center flex-wrap text-nowrap mb-sm-4 mb-3 fs-sm"
-        >
-          <div class="mb-2 me-sm-3 me-2 text-muted">
-            Publicado en Oct 29, 2022
-          </div>
-          <div class="mb-2 me-sm-3 me-2 ps-sm-3 ps-2 border-start text-muted">
-            <i class="ci-eye me-1 fs-base mt-n1 align-middle"></i>15 vistas
-          </div>
-          <div class="mb-2 me-sm-3 me-2 ps-sm-3 ps-2 border-start text-muted">
-            <i class="ci-heart me-1 fs-base mt-n1 align-middle"></i>4 favoritos
-          </div>
-        </div>
+        <h2 class="h3 mb-1 text-warning mb-4">${product[0].brand}</h2>
+
         <div class="row row-cols-sm-1 row-cols-1 mb-4 pb-md-2">
           <!-- Descripción-->
-          <p class="mb-4 pb-md-2 fs-sm">
-            Hendrerit interdum sit massa lobortis. Habitant faucibus lorem dui
-            mauris. Pellentesque nunc, tortor quam consequat odio. Sed faucibus
-            id rhoncus, scelerisque tristique ultricies nam.
+          <p class="mb-1 pb-md-2 fs-sm">${product[0].description}</p>
+          <p class="mb-4 pb-md-2 fs-sm text-muted">${product[0].features}</p>
+          <p class="mb-2 pb-md-2 fs-4">
+            ${"$" + Intl.NumberFormat("es-CL").format(product[0].price)}
           </p>
           <div>Cantidad</div>
           <input
             type="number"
-            class="w-25 ms-2 rounded-1 border border-secondary"
+            id="quantity-detail-input"
+            class="w-25 ms-2 rounded-1 border border-light-subtle"
             min="1"
             value="1"
           />
-          <button
-            type="button"
-            class="btn btn-primary mt-4 ms-2 w-75 p-3"
-            id="display-detail-button"
-          >
-            Agregar al carrito
-          </button>
+          <div class="row">
+            <div class="col-7 m-0 p-0">
+              <button
+                type="button"
+                class="btn btn-warning mt-4 btn-lg  p-3 w-100"
+                id="add-to-cart-button"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+            <div class="col-5 mt-1 ">
+              <button
+                type="button"
+                class="btn btn-outline-warning btn-sm mt-4 w-100 p-3"
+                id="back-grid-detail-button"
+              >
+                Ir al Catálogo
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
