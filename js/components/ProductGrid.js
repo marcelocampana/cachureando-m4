@@ -8,7 +8,13 @@ export default function ProductGrid() {
       <div class="row">
         ${products
           .map((product) =>
-            card(product.id, product.product, product.price, product.imageUrl)
+            card(
+              product.id,
+              product.brand,
+              product.description,
+              product.price,
+              product.imageUrl
+            )
           )
           .join("")}
       </div>

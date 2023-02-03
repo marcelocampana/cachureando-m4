@@ -1,6 +1,13 @@
 import { html } from "../../utils/htmlRaw.js";
 
-export default function CartItem() {
+export default function CartItem(
+  id,
+  brand,
+  description,
+  imageUrl,
+  price,
+  quantity
+) {
   return html`<div
     class="d-block d-sm-flex align-items-center py-4 border-bottom"
   >
@@ -8,10 +15,7 @@ export default function CartItem() {
       class="d-block position-relative mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto"
       href="marketplace-single.html"
       style="width: 12.5rem;"
-      ><img
-        class="rounded-3 w-100"
-        src="https://cdn.pixabay.com/photo/2017/01/28/14/16/clock-2015460_960_720.jpg"
-        alt="Product" /><span
+      ><img class="rounded-3 w-100" src=${imageUrl} alt="Product" /><span
         class="btn btn-icon btn-danger position-absolute top-0 end-0 py-0 px-1 m-2"
         data-bs-toggle="tooltip"
         aria-label="Remove from Favorites"
@@ -20,16 +24,32 @@ export default function CartItem() {
     ></a>
     <div class="text-center text-sm-start">
       <h3 class="h6 product-title mb-2">
-        <a href="marketplace-single.html">Titulo del Producto</a>
+        <div>${brand}-${description}</div>
       </h3>
-      <div class="d-inline-block text-accent">$1.800</div>
       <div class="form-inline pt-2">
         <input
           type="number"
           class="w-25 rounded-1 border border-secondary"
           min="1"
-          value="1"
+          value=${quantity}
         />
+      </div>
+      <div class="d-inline-block text-accent mt-3">
+        ${"$" + Intl.NumberFormat("es-CL").format(price)} c/u
+      </div>
+
+      <div class=" text-accent">
+        ${"$" + Intl.NumberFormat("es-CL").format(price * quantity)} en total.
+      </div>
+      <div class="mt-3">
+        <a
+          href="#"
+          style="font-size:14px"
+          class="text-danger text-decoration-underline"
+          id="cart-delete-item"
+        >
+          Eliminar
+        </a>
       </div>
     </div>
   </div>`;
