@@ -27,7 +27,8 @@ export default function CartTotal() {
       <a
         class="btn btn-primary btn-shadow d-block w-100 mt-4"
         href="marketplace-checkout.html"
-        ><i class="ci-locked fs-lg me-2"></i>Compra segura</a
+        id="checkout-cart-button"
+        ><i class="ci-locked fs-lg me-2"></i>Finalizar Compra Segura</a
       >
       <div class="text-center pt-2 pb-3">
         <small class="text-form text-muted"
