@@ -1,7 +1,7 @@
 import { html } from "../../utils/htmlRaw.js";
-import { products } from "../../data/products.js";
-export default function ProductGrid(id) {
-  const product = products.filter((product) => product.id === id);
+
+export default function ProductDetail(id, productData) {
+  const product = productData.filter((product) => product.id === id);
 
   return html`<div class="row gy-4 mx-auto w-75">
     <h1 class="text-secondary fs-3">Detalle de producto</h1>
@@ -38,8 +38,16 @@ export default function ProductGrid(id) {
             id="quantity-detail-input"
             class="w-25 ms-2 rounded-1 border border-light-subtle"
             min="1"
+            max=${product[0].stock}
             value="1"
           />
+          <p class="card-text text-danger-emphasis my-2">
+            ${product[0].stock < 4 && product[0].stock >= 2
+              ? "Sólo " + product[0].stock + " en existencia"
+              : ""}
+            ${product[0].stock === 1 ? "Único en existencia!" : ""}
+          </p>
+
           <div class="row">
             <div class="col-7 m-0 p-0">
               <button

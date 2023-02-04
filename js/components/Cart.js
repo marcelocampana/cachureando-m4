@@ -3,12 +3,12 @@ import CartItem from "./CartItem.js";
 import CartNav from "./CartNav.js";
 import CartTotal from "./CartTotal.js";
 
-export default function Cart(id, productsInToCard) {
+export default function Cart(productsInCart) {
   return html`<div class="row w-75 mx-auto mt-5">
     <div class="col-12 col-md-8">
-      <div>${CartNav(productsInToCard)}</div>
-      ${productsInToCard && productsInToCard.length > 0
-        ? productsInToCard
+      <div>${CartNav(productsInCart)}</div>
+      ${productsInCart && productsInCart.length > 0
+        ? productsInCart
             .map((product) =>
               CartItem(
                 product.id,
@@ -16,7 +16,8 @@ export default function Cart(id, productsInToCard) {
                 product.description,
                 product.imageUrl,
                 product.price,
-                product.quantity
+                product.quantity,
+                product.stock
               )
             )
             .join("")

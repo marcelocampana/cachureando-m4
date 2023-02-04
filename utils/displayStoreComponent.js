@@ -8,4 +8,6 @@ export default function displayStoreComponent(component) {
     component === "product-detail" ? "row" : "d-none";
   document.getElementById("cart").className =
     component === "cart" ? "row" : "d-none";
+  document.getElementById("checkout").className =
+    component === "checkout" ? "row" : "d-none";
 }
