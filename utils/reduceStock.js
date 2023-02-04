@@ -1,38 +1,33 @@
-import { products } from "../data/products.js";
-
-export default function reduceStock(
-  productsInCart,
-  customerPurchaseNumber,
-  newStockOfProducts
-) {
-  productsInCart.forEach((product) => {
+export default function reduceStock(cartProducts, purchaseNumber, stock) {
+  console.log(stock);
+  cartProducts.forEach((product) => {
     if (product.stock > 0) {
       product.stock = product.stock - product.quantity;
     }
-    customerPurchaseNumber += 1;
+    purchaseNumber += 1;
   });
 
-  return newStock(customerPurchaseNumber, productsInCart, newStockOfProducts);
+  return newStock(purchaseNumber, cartProducts, stock);
 }
 
-function newStock(customerPurchaseNumber, productsInCart, newStockOfProducts) {
+function newStock(purchaseNumber, cartProducts, stock) {
   let productId = "";
 
-  if (customerPurchaseNumber > 0) {
-    productId = productsInCart.map((product) => product.id);
+  if (purchaseNumber > 0) {
+    productId = cartProducts.map((product) => product.id);
 
     productId.forEach((item) => {
-      deleteProduct(item);
+      deleteProduct(item, stock);
     });
 
-    newStockOfProducts = productsInCart.concat(...products);
+    stock = cartProducts.concat(...stock);
 
-    return newStockOfProducts;
+    return stock;
   }
 }
 
-function deleteProduct(item) {
+function deleteProduct(item, stock) {
   let productToEliminate = [];
-  productToEliminate.push(products.findIndex((product) => product.id === item));
-  return productToEliminate >= 0 && products.splice(productToEliminate, 1);
+  productToEliminate.push(stock.findIndex((product) => product.id === item));
+  return productToEliminate >= 0 && stock.splice(productToEliminate, 1);
 }

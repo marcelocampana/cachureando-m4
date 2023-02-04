@@ -1,7 +1,6 @@
 import { html } from "../../utils/htmlRaw.js";
 
 export default function ProductDetail(id, productData) {
-  console.log(productData);
   const product = productData.filter((product) => product.id === id);
 
   return html`<div class="row gy-4 mx-auto w-75">

@@ -78,13 +78,13 @@ function renderProductDetail(id, productData, cartProducts) {
       }
     });
     displayStoreComponent("cart");
-    renderCart(cartProducts);
+    renderCart(cartProducts, productData);
   });
 }
 
 /* ---Carrito --- */
 
-function renderCart(cartProducts) {
+function renderCart(cartProducts, productData) {
   displayStoreComponent("cart");
   const productCart = document.getElementById("cart");
   productCart.innerHTML = Cart(cartProducts);
@@ -99,24 +99,20 @@ function renderCart(cartProducts) {
   });
   const checkoutCartButton = document.getElementById("checkout-cart-button");
   checkoutCartButton.addEventListener("click", function () {
-    renderCheckout(productsInCart);
+    renderCheckout(cartProducts, productData);
   });
 }
 
 /* --- Checkout --- */
 
-function renderCheckout(productsInCart) {
+function renderCheckout(cartProducts, productData) {
   displayStoreComponent("checkout");
   const checkout = document.getElementById("checkout");
   checkout.innerHTML = Checkout();
-  const values = reduceStock(
-    productsInCart,
-    customerPurchaseNumber,
-    newStockOfProducts
-  );
-  console.log(productsInCart);
-  productsInCart = productsInCart.length !== 0 && [];
-  console.log(productsInCart);
+
+  const values = reduceStock(cartProducts, customerPurchaseNumber, productData);
+
+  productsInCart = [];
 
   const backToHomeCheckoutButton = document.getElementById(
     "back-to-home-checkout-button"
