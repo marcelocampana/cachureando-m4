@@ -1,25 +1,29 @@
 import { html } from "../../utils/htmlRaw.js";
 
 export default function Carrousel() {
-  return html`<div id="carouselExample" class="carousel slide">
+  return html`<div
+    id="carouselExampleSlidesOnly"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
     <div class="carousel-inner" style=" height:300px">
       <div class="carousel-item active">
         <img
-          src="https://cdn.pixabay.com/photo/2017/01/28/14/16/clock-2015460_960_720.jpg"
+          src="https://festina.cl/modules/ps_banner/img/4c5520cb79a1969531ffc1bae1eaab67.jpg"
           class="d-block w-100"
           alt="..."
         />
       </div>
       <div class="carousel-item">
         <img
-          src="https://cdn.pixabay.com/photo/2017/02/01/18/32/pocket-watch-2031021_960_720.jpg"
+          src="https://cdn.shopify.com/s/files/1/0556/1538/9878/files/SlideWebBANNER_1500x440B_841ca24b-2846-400a-a0c5-b781a74a4dc4_1512x.jpg?v=1674561008"
           class="d-block w-100"
           alt="..."
         />
       </div>
       <div class="carousel-item">
         <img
-          src="https://cdn.pixabay.com/photo/2016/11/29/13/39/analog-watch-1869928_960_720.jpg"
+          src="https://media6.festinagroup.com/static/tiendas_online/festina/images/home/bannerMissFrance.jpg"
           class="d-block w-100"
           alt="..."
         />
