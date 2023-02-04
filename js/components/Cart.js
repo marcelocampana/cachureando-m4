@@ -16,7 +16,8 @@ export default function Cart(productsInCart) {
                 product.description,
                 product.imageUrl,
                 product.price,
-                product.quantity
+                product.quantity,
+                product.stock
               )
             )
             .join("")

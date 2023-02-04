@@ -6,7 +6,8 @@ export default function CartItem(
   description,
   imageUrl,
   price,
-  quantity
+  quantity,
+  stock
 ) {
   return html`<div
     class="d-block d-sm-flex align-items-center py-4 border-bottom"
@@ -31,6 +32,7 @@ export default function CartItem(
           type="number"
           class="w-25 rounded-1 border border-secondary"
           min="1"
+          max=${stock}
           value=${quantity}
         />
       </div>

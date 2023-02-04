@@ -10,11 +10,24 @@ export default function card(id, brand, description, price, imageUrl, stock) {
         <div class="card-body">
           <h5 class="card-title text-warning">${brand}</h5>
           <p class="card-text fs-sm text-secondary">${description}</p>
-          <p class="card-text fs-5">
+          <p class="card-text fs-5 mb-1">
             ${"$" + Intl.NumberFormat("es-CL").format(price)}
           </p>
-          <p class="card-text fs-sm text-secondary">${stock}</p>
-          <button type="button" class="btn btn-sm btn-warning" id=${htmlId}>
+          <p
+            class="card-text text-danger-emphasis my-2"
+            ${stock > 3 && "style='height:24px'"}
+          >
+            ${stock < 4 && stock >= 2 ? "Sólo " + stock + " en existencia" : ""}
+            ${stock === 1 ? "Único en existencia!" : ""}
+            ${stock === 0 ? "Agotado" : ""}
+          </p>
+          <button
+            type="button"
+            class="btn btn-sm btn-warning"
+            id=${htmlId}
+            ${stock === 0 &&
+            "style='pointer-events:none; cursor: not-allowed;   background-color: rgb(229, 229, 229) !important; border:none'"}
+          >
             Comprar
           </button>
         </div>

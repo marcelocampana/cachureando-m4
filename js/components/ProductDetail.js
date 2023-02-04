@@ -38,8 +38,16 @@ export default function ProductDetail(id, productData) {
             id="quantity-detail-input"
             class="w-25 ms-2 rounded-1 border border-light-subtle"
             min="1"
+            max=${product[0].stock}
             value="1"
           />
+          <p class="card-text text-danger-emphasis my-2">
+            ${product[0].stock < 4 && product[0].stock >= 2
+              ? "Sólo " + product[0].stock + " en existencia"
+              : ""}
+            ${product[0].stock === 1 ? "Único en existencia!" : ""}
+          </p>
+
           <div class="row">
             <div class="col-7 m-0 p-0">
               <button

@@ -12,7 +12,6 @@ import reduceStock from "../utils/reduceStock.js";
 
 //let productsInCart = [];
 let customerPurchaseNumber = 0;
-var newStockOfProducts = [];
 let productsInCart = [];
 
 /* ---Navbar y Footer ---*/
