@@ -29,7 +29,7 @@ export default function CartItem(
       <div class="form-inline pt-2">
         <input
           type="number"
-          class="w-25 rounded-1 border border-secondary"
+          class="w-25 rounded-1 border border-secondary chanceQty"
           min="1"
           value=${quantity}
         />
@@ -45,8 +45,7 @@ export default function CartItem(
         <a
           href="#"
           style="font-size:14px"
-          class="text-danger text-decoration-underline"
-          id="cart-delete-item"
+          class="text-danger text-decoration-underline cart-delete-item"
         >
           Eliminar
         </a>
@@ -54,3 +53,5 @@ export default function CartItem(
     </div>
   </div>`;
 }
+
+

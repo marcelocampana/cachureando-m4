@@ -69,6 +69,8 @@ function renderProductDetail(id) {
     });
     displayStoreComponent("cart");
     renderCart(id, productsInCard);
+    removeProducts();
+    qtyProducts();
   });
 }
 
@@ -87,4 +89,37 @@ function renderCart(id, productsInToCard) {
     productsInCard = [];
     renderCart(0, productsInCard);
   });
+}
+
+// Delete elements from cart
+function removeProducts() {
+  let removeProductsFromCart = document.getElementsByClassName('cart-delete-item');
+  for (let i = 0; i < removeProductsFromCart.length; i++) {
+    let cartDeleteButton = removeProductsFromCart[i];
+    cartDeleteButton.addEventListener('click', removeElement);
+  }
+
+  function removeElement(event) {
+    let buttonClicked = event.target;
+    // let removeItem = buttonClicked.closest('div.text-center.text-sm-start');
+    let removeItem = buttonClicked.closest('div.d-block.d-sm-flex.align-items-center.py-4.border-bottom').remove();
+    console.log(removeItem)
+  }
+}
+
+// Change of products quantity
+function qtyProducts() {
+  let quantityInputs = document.getElementsByClassName("chanceQty"); 
+  for (let i = 0; i< quantityInputs.length; i++) {
+    let qtyInputs = quantityInputs[i];
+    qtyInputs.addEventListener("change", qtyChange);
+  }
+
+  function qtyChange(event){
+    let quantityChange = event.target;
+    // console.log(quantityChange)
+    if (isNaN(quantityChange.value) || quantityChange.value <= 0){
+      quantityChange.value = 1;
+    }
+  }
 }
