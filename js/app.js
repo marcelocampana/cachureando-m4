@@ -1,12 +1,19 @@
-let productsInCard = [];
 /* ---Imports ---*/
-import Carrousel from "./components/Carrousel.js";
+
 import { Footer, Navbar } from "./components/Layout.js";
 import ProductGrid from "./components/ProductGrid.js";
-import ProductDetail from "./components/ProductDetail.js";
-import displayStoreComponent from "../utils/displayStoreComponent.js";
-import Cart from "./components/Cart.js";
 import { products } from "../data/products.js";
+import Carrousel from "./components/Carrousel.js";
+import ProductDetail from "./components/ProductDetail.js";
+import Cart from "./components/Cart.js";
+import Checkout from "./components/Checkout.js";
+import displayStoreComponent from "../utils/displayStoreComponent.js";
+import reduceStock from "../utils/reduceStock.js";
+
+//let productsInCart = [];
+let customerPurchaseNumber = 0;
+var newStockOfProducts = [];
+let productsInCart = [];
 
 /* ---Navbar y Footer ---*/
 const nav = document.getElementById("nav");
@@ -25,32 +32,35 @@ navProductCart.addEventListener("click", function () {
 });
 
 /* ---Catálogo--- */
-const carrousel = document.getElementById("product-grid");
-carrousel.innerHTML = Carrousel();
-const productGrid = document.getElementById("product-grid");
-productGrid.innerHTML += ProductGrid();
-products.forEach((product) => {
-  const displayDetailButton = document.getElementById(
-    `display-detail-button-${product.id}`
-  );
-  displayDetailButton.addEventListener("click", function () {
-    renderProductDetail(product.id);
+function renderGrid(productData) {
+  const carrousel = document.getElementById("product-grid");
+  carrousel.innerHTML = Carrousel();
+  const productGrid = document.getElementById("product-grid");
+  productGrid.innerHTML += ProductGrid(productData);
+  productData.forEach((product) => {
+    const displayDetailButton = document.getElementById(
+      `display-detail-button-${product.id}`
+    );
+    displayDetailButton.addEventListener("click", function () {
+      renderProductDetail(product.id, productData, productsInCart);
+    });
   });
-});
+}
+renderGrid(products);
 
 /* ---Pagina Detalle del producto --- */
-//const productDetail = document.getElementById("product-detail");
 
-function renderProductDetail(id) {
+function renderProductDetail(id, productData, cartProducts) {
   displayStoreComponent("product-detail");
   const productDetail = document.getElementById("product-detail");
-  productDetail.innerHTML = ProductDetail(id);
+  productDetail.innerHTML = ProductDetail(id, productData);
   const backGridDetailButton = document.getElementById(
     "back-grid-detail-button"
   );
   backGridDetailButton.addEventListener("click", function () {
     displayStoreComponent("product-grid");
   });
+
   const addToCartButton = document.getElementById("add-to-cart-button");
 
   addToCartButton.addEventListener("click", function () {
@@ -58,33 +68,63 @@ function renderProductDetail(id) {
       "quantity-detail-input"
     );
 
-    products.forEach((product) => {
+    productData.forEach((product) => {
       if (product.id === id) {
         const productPlusQuantity = {
           ...product,
           quantity: productDetailQuantity.value,
         };
-        productsInCard.push(productPlusQuantity);
+        cartProducts.push(productPlusQuantity);
       }
     });
     displayStoreComponent("cart");
-    renderCart(id, productsInCard);
+    renderCart(cartProducts);
   });
 }
 
 /* ---Carrito --- */
 
-function renderCart(id, productsInToCard) {
+function renderCart(cartProducts) {
   displayStoreComponent("cart");
   const productCart = document.getElementById("cart");
-  productCart.innerHTML = Cart(id, productsInToCard);
+  productCart.innerHTML = Cart(cartProducts);
   const backGridCartButton = document.getElementById("back-grid-cart-button");
   backGridCartButton.addEventListener("click", function () {
     displayStoreComponent("product-grid");
   });
   const resetCartButton = document.getElementById("reset-cart-button");
   resetCartButton.addEventListener("click", function () {
-    productsInCard = [];
-    renderCart(0, productsInCard);
+    productsInCart = [];
+    renderCart(productsInCart);
+  });
+  const checkoutCartButton = document.getElementById("checkout-cart-button");
+  checkoutCartButton.addEventListener("click", function () {
+    renderCheckout(productsInCart);
   });
 }
+
+/* --- Checkout --- */
+
+function renderCheckout(productsInCart) {
+  displayStoreComponent("checkout");
+  const checkout = document.getElementById("checkout");
+  checkout.innerHTML = Checkout();
+  const values = reduceStock(
+    productsInCart,
+    customerPurchaseNumber,
+    newStockOfProducts
+  );
+  console.log(productsInCart);
+  productsInCart = productsInCart.length !== 0 && [];
+  console.log(productsInCart);
+
+  const backToHomeCheckoutButton = document.getElementById(
+    "back-to-home-checkout-button"
+  );
+  backToHomeCheckoutButton.addEventListener("click", function () {
+    displayStoreComponent("product-grid");
+    renderGrid(values);
+  });
+}
+
+//checkout-cart-button

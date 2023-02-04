@@ -1,7 +1,8 @@
 import { html } from "../../utils/htmlRaw.js";
-import { products } from "../../data/products.js";
-export default function ProductGrid(id) {
-  const product = products.filter((product) => product.id === id);
+
+export default function ProductDetail(id, productData) {
+  console.log(productData);
+  const product = productData.filter((product) => product.id === id);
 
   return html`<div class="row gy-4 mx-auto w-75">
     <h1 class="text-secondary fs-3">Detalle de producto</h1>

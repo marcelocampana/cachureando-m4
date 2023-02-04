@@ -1,6 +1,6 @@
 import { html } from "../../utils/htmlRaw.js";
 
-export default function card(id, brand, description, price, imageUrl) {
+export default function card(id, brand, description, price, imageUrl, stock) {
   const htmlId = `display-detail-button-${id}`;
   return html`
     <!-- Image on top -->
@@ -13,6 +13,7 @@ export default function card(id, brand, description, price, imageUrl) {
           <p class="card-text fs-5">
             ${"$" + Intl.NumberFormat("es-CL").format(price)}
           </p>
+          <p class="card-text fs-sm text-secondary">${stock}</p>
           <button type="button" class="btn btn-sm btn-warning" id=${htmlId}>
             Comprar
           </button>

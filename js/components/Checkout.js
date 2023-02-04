@@ -8,7 +8,9 @@ export default function Checkout() {
         <div class="mt-5">
           <h5 class="card-title">Gracias por tu compra</h5>
           <p class="card-text">Pronto recibirás tu Festina! .</p>
-          <a href="#" class="btn btn-primary">Volver al inicio</a>
+          <a href="#" class="btn btn-primary" id="back-to-home-checkout-button"
+            >Volver al inicio</a
+          >
         </div>
       </div>
       <div class="card-footer text-muted">Hecho con</div>
