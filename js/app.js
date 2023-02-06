@@ -9,6 +9,7 @@ import Cart from "./components/Cart.js";
 import Checkout from "./components/Checkout.js";
 import displayStoreComponent from "../utils/displayStoreComponent.js";
 import reduceStock from "../utils/reduceStock.js";
+import countProductsInCart from "../utils/countProductsInCart.js";
 
 //let productsInCart = [];
 let customerPurchaseNumber = 0;
@@ -16,7 +17,7 @@ let productsInCart = [];
 
 /* ---Navbar y Footer ---*/
 const nav = document.getElementById("nav");
-nav.innerHTML = Navbar();
+nav.innerHTML = Navbar(productsInCart);
 const footer = document.getElementById("footer");
 footer.innerHTML = Footer();
 
@@ -105,9 +106,13 @@ function renderProductDetail(id, productData, cartProducts) {
 /* ---Carrito --- */
 
 function renderCart(cartProducts, productData) {
+  console.log(cartProducts.length);
+
   displayStoreComponent("cart");
   const productCart = document.getElementById("cart");
   productCart.innerHTML = Cart(cartProducts);
+  const productsInCartNav = document.getElementById("products-in-cart-nav");
+  productsInCartNav.innerText = countProductsInCart(cartProducts);
   const backGridCartButton = document.getElementById("back-grid-cart-button");
   backGridCartButton.addEventListener("click", function () {
     displayStoreComponent("product-grid");

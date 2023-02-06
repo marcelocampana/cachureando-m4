@@ -1,5 +1,4 @@
 import { html } from "../../utils/htmlRaw.js";
-import displayStoreComponent from "../../utils/displayStoreComponent.js";
 import { menus } from "../../data/menu.js";
 
 function menu(label, link) {
@@ -32,7 +31,7 @@ export function Navbar() {
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
          ${menus.map((item) => menu(item.label, item.link)).join("")}
-         
+         <div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav"></div>
         </ul>
       </div>
     </nav>

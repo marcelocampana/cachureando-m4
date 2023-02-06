@@ -1,3 +1,4 @@
+import countProductsInCart from "../../utils/countProductsInCart.js";
 import { html } from "../../utils/htmlRaw.js";
 
 export default function CartNav(productsInToCard) {
@@ -9,21 +10,17 @@ export default function CartNav(productsInToCard) {
         class="btn btn-outline-accent btn-sm"
         href="#"
         id="back-grid-cart-button"
-        ></i>Seguir comprando</a
+        ><i class="ci-arrow-left me-1 ms-n1"></i>Seguir comprando</a
       >
     </div>
     <div class="d-none d-sm-block py-1 fs-sm">
-      Tienes ${productsInToCard ? productsInToCard.length : 0} productos en tu
-      carro
+      Tienes ${countProductsInCart(productsInToCard)}
+      ${countProductsInCart(productsInToCard) > 1 ? "productos" : "producto"} en
+      tu carro
     </div>
     <div class="py-1">
-      <a
-        class="btn btn-outline-danger btn-sm ${
-          productsInToCard && productsInToCard.length < 1 && "d-none"
-        }"
-        href="#"
-        id="reset-cart-button"
-        ></i>Limpiar carro</a
+      <a class="btn btn-outline-danger btn-sm" href="#" id="reset-cart-button"
+        ><i class="ci-close fs-xs me-1 ms-n1"></i>Limpiar carro</a
       >
     </div>
   </div>`;
