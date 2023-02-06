@@ -19,13 +19,13 @@ export default function card(id, brand, description, price, imageUrl, stock) {
           >
             ${stock < 4 && stock >= 2 ? "Sólo " + stock + " en existencia" : ""}
             ${stock === 1 ? "Único en existencia!" : ""}
-            ${stock === 0 ? "Agotado" : ""}
+            ${stock < 1 ? "Agotado" : ""}
           </p>
           <button
             type="button"
             class="btn btn-sm btn-warning"
             id=${htmlId}
-            ${stock === 0 &&
+            ${stock < 1 &&
             "style='pointer-events:none; cursor: not-allowed;   background-color: rgb(229, 229, 229) !important; border:none'"}
           >
             Comprar

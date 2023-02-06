@@ -24,11 +24,15 @@ const navProductGrid = document.getElementById(`nav-product-grid`);
 navProductGrid.addEventListener("click", function () {
   displayStoreComponent("product-grid");
 });
-const navProductCart = document.getElementById(`nav-product-cart`);
-navProductCart.addEventListener("click", function () {
-  displayStoreComponent("cart");
-  renderCart();
-});
+function navProductCart(cartProducts, productData) {
+  const navProductCartButtom = document.getElementById(`nav-product-cart`);
+  navProductCartButtom.addEventListener("click", function () {
+    displayStoreComponent("cart");
+    renderCart(cartProducts, productData);
+  });
+}
+
+navProductCart(productsInCart, products);
 
 /* ---Catálogo--- */
 function renderGrid(productData) {
@@ -67,18 +71,32 @@ function renderProductDetail(id, productData, cartProducts) {
       "quantity-detail-input"
     );
 
-    productData.forEach((product) => {
-      if (product.id === id) {
-        const productPlusQuantity = {
-          ...product,
-          quantity: productDetailQuantity.value,
-        };
-        cartProducts.push(productPlusQuantity);
-      }
-    });
+    const cartHasProduct = cartProducts.find((product) => product.id === id);
+    if (cartHasProduct) {
+      cartHasProduct.quantity =
+        parseInt(cartHasProduct.quantity) +
+        parseInt(productDetailQuantity.value);
+      /*      productData.forEach((product) => {
+        if (product.stock > 0 && product.id === id)
+          product.stock = product.stock - productDetailQuantity.value;
+      }); */
+    } else {
+      productData.forEach((product) => {
+        if (product.id === id) {
+          const productPlusQuantity = {
+            ...product,
+            quantity: productDetailQuantity.value,
+          };
+          /*         if (product.stock > 0)
+            product.stock = product.stock - productDetailQuantity.value; */
+          cartProducts.push(productPlusQuantity);
+        }
+      });
+    }
     displayStoreComponent("cart");
 
     renderCart(cartProducts, productData);
+    navProductCart(cartProducts, productData);
     removeProducts();
     qtyProducts();
   });
@@ -93,6 +111,7 @@ function renderCart(cartProducts, productData) {
   const backGridCartButton = document.getElementById("back-grid-cart-button");
   backGridCartButton.addEventListener("click", function () {
     displayStoreComponent("product-grid");
+    // renderGrid(productData);
   });
   const resetCartButton = document.getElementById("reset-cart-button");
   resetCartButton.addEventListener("click", function () {
@@ -115,6 +134,7 @@ function renderCheckout(cartProducts, productData) {
   const values = reduceStock(cartProducts, customerPurchaseNumber, productData);
 
   productsInCart = [];
+  navProductCart([], []);
 
   const backToHomeCheckoutButton = document.getElementById(
     "back-to-home-checkout-button"

@@ -17,7 +17,7 @@ export function Navbar() {
       class="navbar navbar-expand-lg navbar-light px-2"
       style="background-color: #3f51b5; color:#fff"
     >
-      <a class="navbar-brand" href="#" style="color:#fff"> Navbar </a>
+      <a class="navbar-brand" href="#" style="color:#fff"> Festina </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -29,7 +29,7 @@ export function Navbar() {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
          ${menus.map((item) => menu(item.label, item.link)).join("")}
          
