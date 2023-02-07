@@ -41,7 +41,7 @@ export function Navbar() {
 
 export function Footer() {
   return html`<!-- Remove the container if you want to extend the Footer to full width. -->
-    <div class="container-fluid my-5" style="background-color: #3f51b5">
+    <div class="container-fluid mt-5" style="background-color: #3f51b5">
       <!-- Footer -->
       <footer class="text-center text-white" style="background-color: #3f51b5">
         <!-- Grid container -->
@@ -53,7 +53,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Relojes</a>
+                  <a href="#!" class="text-white text-decoration-none">Relojes</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -61,7 +61,15 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Ofertas</a>
+                  <a href="#!" class="text-white text-decoration-none">Ofertas</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="#!" class="text-white text-decoration-none">Compra Segura</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -69,7 +77,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Compra Segura</a>
+                  <a href="#!" class="text-white text-decoration-none">Garantía</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -77,15 +85,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Garantía</a>
-                </h6>
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Ayuda</a>
+                  <a href="#!" class="text-white text-decoration-none">Ayuda</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -136,15 +136,17 @@ export function Footer() {
         <!-- Grid container -->
 
         <!-- Copyright -->
+  
         <div
-          class="text-center p-3"
+          class="text-center py-3 fst-normal d-flex justify-content-center"
           style="background-color: rgba(0, 0, 0, 0.2)"
         >
-          © 2020 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/"
-            >Festina M.R</a
+          © 2023 Copyright
+          <div class="text-white fst-normal" 
+            >: Festina M.R</div
           >
         </div>
+    
         <!-- Copyright -->
       </footer>
       <!-- Footer -->
