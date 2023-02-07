@@ -53,7 +53,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">About us</a>
+                  <a href="#!" class="text-white">Relojes</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -61,7 +61,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Products</a>
+                  <a href="#!" class="text-white">Ofertas</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -69,7 +69,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Awards</a>
+                  <a href="#!" class="text-white">Compra Segura</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -77,7 +77,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Help</a>
+                  <a href="#!" class="text-white">Garantía</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -85,7 +85,7 @@ export function Footer() {
               <!-- Grid column -->
               <div class="col-md-2">
                 <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">Contact</a>
+                  <a href="#!" class="text-white">Ayuda</a>
                 </h6>
               </div>
               <!-- Grid column -->
@@ -101,10 +101,9 @@ export function Footer() {
             <div class="row d-flex justify-content-center">
               <div class="col-lg-8">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                  distinctio earum repellat quaerat voluptatibus placeat nam,
-                  commodi optio pariatur est quia magnam eum harum corrupti
-                  dicta, aliquam sequi voluptate quas.
+                <em>Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad.
+                Festina ofrece diseños distinguidos e innovación tecnológica constante. 
+                Las nuevas tecnologías aplicadas tanto a diseños clásicos como de tendencia han convertido Festina en una marca de relojes líderes en el mundo.<em>
                 </p>
               </div>
             </div>
@@ -143,7 +142,7 @@ export function Footer() {
         >
           © 2020 Copyright:
           <a class="text-white" href="https://mdbootstrap.com/"
-            >MDBootstrap.com</a
+            >Festina M.R</a
           >
         </div>
         <!-- Copyright -->

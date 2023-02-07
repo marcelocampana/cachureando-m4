@@ -13,6 +13,7 @@ export default function Checkout() {
           >
         </div>
       </div>
+       <!--Comment Agregar o eliminar a Hecho con-->
       <div class="card-footer text-muted">Hecho con</div>
     </div>
   </div>`;
