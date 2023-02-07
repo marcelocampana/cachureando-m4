@@ -13,7 +13,7 @@ export default function CartNav(productsInToCard) {
         ><i class="ci-arrow-left me-1 ms-n1"></i>Seguir comprando</a
       >
     </div>
-    <div class="d-none d-sm-block py-1 fs-sm">
+    <div class="cart-products d-none d-sm-block py-1 fs-sm">
       Tienes ${countProductsInCart(productsInToCard)}
       ${countProductsInCart(productsInToCard) > 1 ? "productos" : "producto"} en
       tu carro
