@@ -1,4 +1,5 @@
 import { html } from "../../utils/htmlRaw.js";
+import { watchInventory } from "../class/inventoryClass.js";
 
 export default function card(id, brand, description, price, imageUrl, stock) {
   const htmlId = `display-detail-button-${id}`;
