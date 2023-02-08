@@ -1,4 +1,4 @@
-import { watchs } from "./productClass.js";
+import { watchs } from "./product.js";
 
 class Inventory {
   constructor() {

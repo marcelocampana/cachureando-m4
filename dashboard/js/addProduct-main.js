@@ -1,4 +1,4 @@
-import { watchInventory } from "./class/inventoryClass.js";
+import { watchInventory } from "../../classes/inventory.js";
 const productToAdded = {
   id: 13,
   brand: "Festina",
@@ -11,12 +11,12 @@ const productToAdded = {
   stock: 8,
 };
 
-import adminAddProduct from "./adminComponents/addProduct.js";
+import AddProduct from "./adminComponents/AddProduct.js";
 
-const addProductToStock = document.getElementById("add-product-admin");
-addProductToStock.innerHTML = adminAddProduct();
+const addProductToStock = document.getElementById("add-product");
+addProductToStock.innerHTML = AddProduct();
 
-const addProductToStockButton = document.getElementById("add-product-admin");
+const addProductToStockButton = document.getElementById("add-product");
 
 addProductToStockButton.addEventListener("click", function () {
   watchInventory.addProduct(productToAdded);
