@@ -10,6 +10,8 @@ import Checkout from "./components/Checkout.js";
 import displayStoreComponent from "../utils/displayStoreComponent.js";
 import reduceStock from "../utils/reduceStock.js";
 import countProductsInCart from "../utils/countProductsInCart.js";
+import CartTotal from "./components/CartTotal.js";
+import CartItem from "./components/CartItem.js";
 
 //let productsInCart = [];
 let customerPurchaseNumber = 0;
@@ -98,6 +100,7 @@ function renderProductDetail(id, productData, cartProducts) {
 
     renderCart(cartProducts, productData);
     navProductCart(cartProducts, productData);
+    updateCartTotal();
     removeProducts();
     qtyProducts();
   });
@@ -106,7 +109,7 @@ function renderProductDetail(id, productData, cartProducts) {
 /* ---Carrito --- */
 
 function renderCart(cartProducts, productData) {
-  console.log(cartProducts.length);
+  // console.log(cartProducts.length);
 
   displayStoreComponent("cart");
   const productCart = document.getElementById("cart");
@@ -150,8 +153,6 @@ function renderCheckout(cartProducts, productData) {
   });
 }
 
-//checkout-cart-button
-
 // Delete elements from cart
 function removeProducts() {
   let removeProductsFromCart =
@@ -163,11 +164,9 @@ function removeProducts() {
 
   function removeElement(event) {
     let buttonClicked = event.target;
-    // let removeItem = buttonClicked.closest('div.text-center.text-sm-start');
-    let removeItem = buttonClicked
-      .closest("div.d-block.d-sm-flex.align-items-center.py-4.border-bottom")
-      .remove();
-    console.log(removeItem);
+    buttonClicked.parentElement.parentElement.parentElement.remove();
+    // let removeItem = buttonClicked.closest("div.d-block").remove();
+    updateCartTotal();
   }
 }
 
@@ -181,9 +180,46 @@ function qtyProducts() {
 
   function qtyChange(event) {
     let quantityChange = event.target;
-    // console.log(quantityChange)
     if (isNaN(quantityChange.value) || quantityChange.value <= 0) {
       quantityChange.value = 1;
     }
+    updateCartTotal();
   }
+}
+
+// Checking total purchase
+function updateCartTotal() {
+  let cartContent = document.getElementById('cart-content');
+  let productContent = cartContent.getElementsByClassName('product-content');
+  let total = 0;
+    for (let i = 0; i < productContent.length; i++) {
+      // Defining
+      let productsList = productContent[i];
+      let productQuantity = productsList.getElementsByClassName('chanceQty')[0];
+      let productPrice = productsList.getElementsByClassName('p-price')[0].innerText;
+      let price = parseInt(productPrice.replace(/\D/g,''));
+      
+      // Math
+      let quantity = productQuantity.value;
+      total = total + (price * quantity);
+      
+      // HTML print
+      document.getElementById('total').innerHTML = `<h3>$${Intl.NumberFormat("es-CL").format(total)}</h3>`;
+      document.getElementById('products-in-cart-nav').innerHTML = 
+        `<div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav">${productContent.length}</div>`;
+
+      productsList.getElementsByClassName('t-price')[0].innerHTML = `<div> ${"$" + Intl.NumberFormat("es-CL").format(price * quantity)} en total.</div>`;
+      
+      if (productContent.length >= 2) {
+        document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} productos en tu carro</div>`;
+      } else {
+        document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} producto en tu carro</div>`;
+      }
+    }
+    if (total == 0) {
+      document.getElementById('total').innerHTML = `<h3>$${Intl.NumberFormat("es-CL").format(total)}</h3>`;
+      document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} productos en tu carro</div>`;
+      document.getElementById('products-in-cart-nav').innerHTML = 
+        `<div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav">${productContent.length}</div>`;
+    }
 }

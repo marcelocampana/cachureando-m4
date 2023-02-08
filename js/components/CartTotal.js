@@ -5,7 +5,7 @@ export default function CartTotal() {
     <div class="px-lg-2">
       <div class="text-center mb-4 py-3 border-bottom">
         <h2 class="h6 mb-3 pb-1">Total de la compra</h2>
-        <h3 class="fw-normal">$5.600</h3>
+        <h3 id="total" class="fw-normal">0</h3>
       </div>
       <div class="text-center mb-4 pb-3 border-bottom">
         <h2 class="h6 mb-3 pb-1">Codigo de descuento</h2>
@@ -38,3 +38,5 @@ export default function CartTotal() {
     </div>
   </div>`;
 }
+
+

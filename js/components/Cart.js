@@ -5,7 +5,7 @@ import CartTotal from "./CartTotal.js";
 
 export default function Cart(productsInCart) {
   return html`<div class="row w-75 mx-auto mt-5">
-    <div class="col-12 col-md-8">
+    <div id="cart-content" class="col-12 col-md-8">
       <div>${CartNav(productsInCart)}</div>
       ${productsInCart && productsInCart.length > 0
         ? productsInCart

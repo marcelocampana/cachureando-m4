@@ -10,7 +10,7 @@ export default function CartItem(
   stock
 ) {
   return html`<div
-    class="d-block d-sm-flex align-items-center py-4 border-bottom"
+    class="product-content d-block d-sm-flex align-items-center py-4 border-bottom"
   >
     <div
       class="d-block position-relative mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto"
@@ -44,11 +44,11 @@ export default function CartItem(
           </div>`
         : ""}
 
-      <div class="d-inline-block text-accent mt-3">
+      <div class="p-price d-inline-block text-accent mt-3">
         ${"$" + Intl.NumberFormat("es-CL").format(price)} c/u
       </div>
 
-      <div class=" text-accent">
+      <div class="t-price text-accent">
         ${"$" + Intl.NumberFormat("es-CL").format(price * quantity)} en total.
       </div>
       <div class="mt-3">
