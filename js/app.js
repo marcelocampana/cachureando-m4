@@ -192,30 +192,34 @@ function updateCartTotal() {
   let cartContent = document.getElementById('cart-content');
   let productContent = cartContent.getElementsByClassName('product-content');
   let total = 0;
-  for (let i = 0; i < productContent.length; i++) {
-    // Defining
-    let productsList = productContent[i];
-    let productQuantity = productsList.getElementsByClassName('chanceQty')[0];
-    let productPrice = productsList.getElementsByClassName('p-price')[0].innerText;
-    let price = parseInt(productPrice.replace(/\D/g,''));
-    
-    // Math
-    let quantity = productQuantity.value;
-    total = total + (price * quantity);
-    let CLPFormat = Intl.NumberFormat("es-CL").format(total);
+    for (let i = 0; i < productContent.length; i++) {
+      // Defining
+      let productsList = productContent[i];
+      let productQuantity = productsList.getElementsByClassName('chanceQty')[0];
+      let productPrice = productsList.getElementsByClassName('p-price')[0].innerText;
+      let price = parseInt(productPrice.replace(/\D/g,''));
+      
+      // Math
+      let quantity = productQuantity.value;
+      total = total + (price * quantity);
+      
+      // HTML print
+      document.getElementById('total').innerHTML = `<h3>$${Intl.NumberFormat("es-CL").format(total)}</h3>`;
+      document.getElementById('products-in-cart-nav').innerHTML = 
+        `<div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav">${productContent.length}</div>`;
 
-    // HTML print
-    document.getElementById('total').innerHTML = `<h3>$${CLPFormat}</h3>`;
-    document.getElementById('products-in-cart-nav').innerHTML = 
-      `<div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav">${productContent.length}</div>`;
-
-    productsList.getElementsByClassName('t-price')[0].innerHTML = `<div> ${"$" + Intl.NumberFormat("es-CL").format(price * quantity)} en total.</div>`;
-    
-    if (productContent.length >= 2) {
-      document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} productos en tu carro</div>`;
-    } else {
-      document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} producto en tu carro</div>`;
+      productsList.getElementsByClassName('t-price')[0].innerHTML = `<div> ${"$" + Intl.NumberFormat("es-CL").format(price * quantity)} en total.</div>`;
+      
+      if (productContent.length >= 2) {
+        document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} productos en tu carro</div>`;
+      } else {
+        document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} producto en tu carro</div>`;
+      }
     }
-    
-  }
+    if (total == 0) {
+      document.getElementById('total').innerHTML = `<h3>$${Intl.NumberFormat("es-CL").format(total)}</h3>`;
+      document.getElementsByClassName('cart-products')[0].innerHTML = `<div>Tienes ${productContent.length} productos en tu carro</div>`;
+      document.getElementById('products-in-cart-nav').innerHTML = 
+        `<div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav">${productContent.length}</div>`;
+    }
 }
