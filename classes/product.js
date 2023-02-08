@@ -1,4 +1,4 @@
-import { products } from "../../data/products.js";
+import { products } from "../data/products.js";
 
 class Product {
   constructor(id, brand, description, features, imageUrl, price, stock) {

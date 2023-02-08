@@ -1,15 +1,24 @@
-import { html } from "../../utils/htmlRaw.js";
+import { html } from "../../../utils/htmlRaw.js";
 
-export default function adminAddProduct() {
+export default function UpdateProduct(product) {
   return html` <form class="mx-auto w-50">
-    <h1 class="mt-3 ">Agregar producto</h1>
-    <p class="mb-4">Ingresa los datos del producto a agregar</p>
+    <h1 class="mt-3 ">Modificar producto</h1>
+    <p class="mb-4">Ingresa los datos a modificar</p>
     <div class="mb-3">
+      <label for="admin-update-brand" class="form-label">ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="admin-update-brand"
+        value="${product.id}"
+        disabled
+      />
       <label for="admin-update-brand" class="form-label">Marca</label>
       <input
         type="text"
         class="form-control"
         id="admin-update-brand"
+        value="${product.brand}"
         required
       />
     </div>
@@ -21,6 +30,7 @@ export default function adminAddProduct() {
         type="text"
         class="form-control"
         id="admin-update-description"
+        value="${product.description}"
         required
       />
     </div>
@@ -33,6 +43,7 @@ export default function adminAddProduct() {
         type="text"
         class="form-control"
         id="admin-update-imageUrl"
+        value="${product.imageUrl}"
         required
       />
     </div>
@@ -42,6 +53,7 @@ export default function adminAddProduct() {
         type="text"
         class="form-control"
         id="admin-update-price"
+        value="${product.price}"
         required
       />
     </div>
@@ -51,6 +63,7 @@ export default function adminAddProduct() {
         type="text"
         class="form-control"
         id="admin-update-stock"
+        value="${product.stock}"
         required
       />
     </div>
@@ -61,7 +74,9 @@ export default function adminAddProduct() {
         name="admin-update-features"
         class="form-control"
         id="admin-update-features"
-      ></textarea>
+      >
+${product.features}</textarea
+      >
     </div>
     <div class="col-12">
       <button type="button" class="btn btn-primary">Modificar</button>
