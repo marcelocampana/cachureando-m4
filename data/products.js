@@ -19,7 +19,7 @@ export const products = [
       "https://falabella.scene7.com/is/image/Falabella/gsc_113063588_501850_1?wid=800&hei=800&qlt=70",
     features:
       "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
-    stock: 5,
+    stock: 3,
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const products = [
       "https://falabella.scene7.com/is/image/Falabella/gsc_113063982_504202_1?wid=800&hei=800&qlt=70",
     features:
       "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
-    stock: 5,
+    stock: 0,
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ export const products = [
       "https://falabella.scene7.com/is/image/Falabella/gsc_113064377_503633_1?wid=800&hei=800&qlt=70",
     features:
       "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
-    stock: 5,
+    stock: 2,
   },
   {
     id: 7,
@@ -96,7 +96,7 @@ export const products = [
       "https://falabella.scene7.com/is/image/Falabella/gsc_113064270_503586_1?wid=1500&hei=1500&qlt=70",
     features:
       "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
-    stock: 5,
+    stock: 3,
   },
   {
     id: 10,
