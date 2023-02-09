@@ -13,5 +13,3 @@ export const watchs = products.map(
       product.stock
     )
 );
-
-console.log(watchs);
