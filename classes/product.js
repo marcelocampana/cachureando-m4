@@ -1,6 +1,6 @@
 import { products } from "../data/products.js";
-
-class Product {
+const percent = 10;
+export default class Product {
   constructor(id, brand, description, features, imageUrl, price, stock) {
     (this.id = id),
       (this.brand = brand),
@@ -9,6 +9,10 @@ class Product {
       (this.imageUrl = imageUrl),
       (this.price = price),
       (this.stock = stock);
+  }
+
+  getProduct() {
+    return this.brand + " " + this.description;
   }
 }
 

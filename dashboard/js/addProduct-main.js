@@ -1,4 +1,4 @@
-import { watchInventory } from "../../classes/inventory.js";
+import { watchInventory } from "../../utils/createInventory.js";
 const productToAdded = {
   id: 13,
   brand: "Festina",
@@ -14,6 +14,7 @@ const productToAdded = {
 import AddProduct from "./adminComponents/AddProduct.js";
 
 const addProductToStock = document.getElementById("add-product");
+
 addProductToStock.innerHTML = AddProduct();
 
 const addProductToStockButton = document.getElementById("add-product");

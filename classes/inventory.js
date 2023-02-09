@@ -1,6 +1,6 @@
 import { watchs } from "./product.js";
 
-class Inventory {
+export default class Inventory {
   constructor() {
     this.products = [];
   }
@@ -16,9 +16,3 @@ class Inventory {
     getProduct(id);
   }
 }
-
-export const watchInventory = new Inventory();
-
-watchs.forEach((watch) => {
-  watchInventory.addProduct(watch);
-});
