@@ -5,66 +5,52 @@ export default function AddProduct() {
     <h1 class="mt-3 ">Agregar producto</h1>
     <p class="mb-4">Ingresa los datos del producto a agregar</p>
     <div class="mb-3">
-      <label for="admin-update-brand" class="form-label">Marca</label>
+      <label for="admin-add-brand" class="form-label">Marca</label>
+      <input type="text" class="form-control" id="admin-add-brand" required />
+    </div>
+    <div class="mb-3">
+      <label for="admin-add-description" class="form-label">Descripción</label>
       <input
         type="text"
         class="form-control"
-        id="admin-update-brand"
+        id="admin-add-description"
         required
       />
     </div>
     <div class="mb-3">
-      <label for="admin-update-description" class="form-label"
-        >Descripción</label
-      >
+      <label for="admin-add-imageUrl" class="form-label">URL del imagen</label>
       <input
         type="text"
         class="form-control"
-        id="admin-update-description"
-        required
-      />
-    </div>
-
-    <div class="mb-3">
-      <label for="admin-update-imageUrl" class="form-label"
-        >URL del imagen</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="admin-update-imageUrl"
+        id="admin-add-imageUrl"
         required
       />
     </div>
     <div class="mb-3">
-      <label for="admin-update-price" class="form-label" disable>Precio</label>
-      <input
-        type="text"
-        class="form-control"
-        id="admin-update-price"
-        required
-      />
+      <label for="admin-add-price" class="form-label" disable>Precio</label>
+      <input type="text" class="form-control" id="admin-add-price" required />
     </div>
     <div class="mb-3">
-      <label for="admin-update-stock" class="form-label">Stock</label>
-      <input
-        type="text"
-        class="form-control"
-        id="admin-update-stock"
-        required
-      />
+      <label for="admin-add-stock" class="form-label">Stock</label>
+      <input type="text" class="form-control" id="admin-add-stock" required />
     </div>
     <div class="mb-3">
-      <label for="admin-update-features" class="form-label">Stock</label>
+      <label for="admin-add-features" class="form-label">Características</label>
       <textarea
         rows="3"
-        name="admin-update-features"
+        name="admin-add-features"
         class="form-control"
-        id="admin-update-features"
+        id="admin-add-features"
+        required
       ></textarea>
     </div>
     <div class="col-12">
-      <button type="button" class="btn btn-primary">Modificar</button>
+      <input
+        type="button"
+        class="btn btn-primary"
+        id="add-product-button"
+        value="Agregar producto"
+      />
     </div>
   </form>`;
 }

@@ -1,24 +1,24 @@
-import { watchs } from "./product.js";
-
-class Inventory {
+export default class Inventory {
   constructor() {
     this.products = [];
   }
-  getProduct(id) {
-    const product = this.products.filter((product) => product.id === id);
+  getProduct(productId) {
+    const product = this.products.filter((product) => product.id === productId);
     return product[0];
+  }
+  getAllProducts() {
+    return this.products;
   }
 
   addProduct(product) {
     this.products.push(product);
   }
-  updateProduct() {
-    getProduct(id);
+  updateProduct(productId, updatedProduct) {
+    const distinctProducts = this.products.filter(
+      (product) => product.id != productId
+    );
+
+    distinctProducts.push(updatedProduct);
+    console.log(distinctProducts);
   }
 }
-
-export const watchInventory = new Inventory();
-
-watchs.forEach((watch) => {
-  watchInventory.addProduct(watch);
-});

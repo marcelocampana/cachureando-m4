@@ -5,11 +5,11 @@ export default function UpdateProduct(product) {
     <h1 class="mt-3 ">Modificar producto</h1>
     <p class="mb-4">Ingresa los datos a modificar</p>
     <div class="mb-3">
-      <label for="admin-update-brand" class="form-label">ID</label>
+      <label for="admin-update-id" class="form-label">ID</label>
       <input
         type="text"
         class="form-control"
-        id="admin-update-brand"
+        id="admin-update-id"
         value="${product.id}"
         disabled
       />
@@ -79,7 +79,9 @@ ${product.features}</textarea
       >
     </div>
     <div class="col-12">
-      <button type="button" class="btn btn-primary">Modificar</button>
+      <button type="button" class="btn btn-primary" id="update-product-button">
+        Modificar
+      </button>
     </div>
   </form>`;
 }

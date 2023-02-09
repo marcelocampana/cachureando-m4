@@ -1,24 +1,22 @@
-import { watchInventory } from "../../classes/inventory.js";
-const productToAdded = {
-  id: 13,
-  brand: "Festina",
-  description: "Festina Reloj Hombre F20435/232 ",
-  price: 199000,
-  imageUrl:
-    "https://falabella.scene7.com/is/image/Falabella/16330228_1?wid=800&hei=800&qlt=70",
-  features:
-    "Los relojes Festina son la mezcla perfecta de elegancia y funcionalidad. Festina ofrece diseños distinguidos e innovación tecnológica constante.",
-  stock: 8,
-};
-
+import { inventory } from "../../utils/createInventory.js";
 import AddProduct from "./adminComponents/AddProduct.js";
 
 const addProductToStock = document.getElementById("add-product");
+
 addProductToStock.innerHTML = AddProduct();
 
-const addProductToStockButton = document.getElementById("add-product");
+const addProductToStockButton = document.getElementById("add-product-button");
 
 addProductToStockButton.addEventListener("click", function () {
-  watchInventory.addProduct(productToAdded);
-  console.log(watchInventory.products);
+  const productToAdded = {
+    // id: document.getElementById("id").value,
+    brand: document.getElementById("admin-add-brand").value,
+    description: document.getElementById("admin-add-description").value,
+    price: document.getElementById("admin-add-price").value,
+    imageUrl: document.getElementById("admin-add-imageUrl").value,
+    features: document.getElementById("admin-add-features").value,
+    stock: document.getElementById("admin-add-stock").value,
+  };
+  inventory.addProduct(productToAdded);
+  console.log(inventory.products);
 });
