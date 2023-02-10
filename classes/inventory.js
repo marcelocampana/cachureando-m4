@@ -21,4 +21,11 @@ export default class Inventory {
     distinctProducts.push(updatedProduct);
     console.log(distinctProducts);
   }
+  removeProduct(productId) {
+    const listWithRemovedProduct = this.products.filter(
+      (product) => product.id !== productId
+    );
+    console.log(listWithRemovedProduct);
+    return listWithRemovedProduct;
+  }
 }

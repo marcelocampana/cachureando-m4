@@ -1,8 +1,17 @@
 import { inventory } from "../../utils/createInventory.js";
 import UpdateProduct from "./adminComponents/updateProduct.js";
+import Sidebar from "./adminComponents/Sidebar.js";
+
+const sidebar = document.getElementById("sidebar");
+sidebar.innerHTML = Sidebar();
+
+const pageId = window.location.search.split("=");
+console.log(pageId[1]);
 
 const updateProduct = document.getElementById("update-product");
-updateProduct.innerHTML = UpdateProduct(inventory.getProduct(1));
+updateProduct.innerHTML = UpdateProduct(
+  inventory.getProduct(parseInt(pageId[1]))
+);
 
 const addProductButton = document.getElementById("update-product-button");
 addProductButton.addEventListener("click", function () {

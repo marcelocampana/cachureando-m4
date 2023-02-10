@@ -1,7 +1,7 @@
 import { html } from "../../../utils/htmlRaw.js";
 
 export default function UpdateProduct(product) {
-  return html` <form class="mx-auto w-50">
+  return html` <form class="mx-auto w-50 my-5">
     <h1 class="mt-3 ">Modificar producto</h1>
     <p class="mb-4">Ingresa los datos a modificar</p>
     <div class="mb-3">
