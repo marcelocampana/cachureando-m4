@@ -60,20 +60,14 @@ function renderProductDetail(id, productData, cartProducts) {
   displayStoreComponent("product-detail");
   const productDetail = document.getElementById("product-detail");
   productDetail.innerHTML = ProductDetail(id, productData);
-  const backGridDetailButton = document.getElementById(
-    "back-grid-detail-button"
-  );
+  const backGridDetailButton = document.getElementById("back-grid-detail-button");
   backGridDetailButton.addEventListener("click", function () {
     displayStoreComponent("product-grid");
   });
 
   const addToCartButton = document.getElementById("add-to-cart-button");
-
   addToCartButton.addEventListener("click", function () {
-    const productDetailQuantity = document.getElementById(
-      "quantity-detail-input"
-    );
-
+    const productDetailQuantity = document.getElementById("quantity-detail-input");
     const cartHasProduct = cartProducts.find((product) => product.id === id);
     if (cartHasProduct) {
       cartHasProduct.quantity =
@@ -97,17 +91,36 @@ function renderProductDetail(id, productData, cartProducts) {
       });
     }
     displayStoreComponent("cart");
-
     renderCart(cartProducts, productData);
     navProductCart(cartProducts, productData);
     updateCartTotal();
     removeProducts();
     qtyProducts();
+    saveCart(cartProducts);
+    loadCart(cartProducts);
   });
 }
 
-/* ---Carrito --- */
+/* --- Local storage --- */
 
+// Save cart
+function saveCart (cartProducts) {
+  localStorage.setItem('shoppingCart', JSON.stringify(cartProducts));
+}
+
+// Load cart
+function loadCart(productData) {
+  let infoRecovered = JSON.parse(localStorage.getItem('shoppingCart'));
+  renderCart(infoRecovered, productData);
+  updateCartTotal();
+  removeProducts();
+  qtyProducts();
+}  
+if (localStorage.getItem("shoppingCart") != null) {
+  loadCart();
+}
+
+/* ---Carrito --- */
 function renderCart(cartProducts, productData) {
   // console.log(cartProducts.length);
 
@@ -167,6 +180,7 @@ function removeProducts() {
     buttonClicked.parentElement.parentElement.parentElement.remove();
     // let removeItem = buttonClicked.closest("div.d-block").remove();
     updateCartTotal();
+    
   }
 }
 
@@ -223,3 +237,6 @@ function updateCartTotal() {
         `<div class="bg-danger rounded-circle h-75 ps-2" style="width:25px" id="products-in-cart-nav">${productContent.length}</div>`;
     }
 }
+
+
+

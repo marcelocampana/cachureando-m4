@@ -15,6 +15,5 @@ addProductButton.addEventListener("click", function () {
     features: document.getElementById("admin-update-features").value,
     stock: document.getElementById("admin-update-stock").value,
   };
-
   inventory.updateProduct(updatedProduct.id, updatedProduct);
 });
