@@ -133,7 +133,8 @@ export const products = [
     id: 11,
     brand: "Festina",
     description: "Reloj para Mujer F20412/2 Rosa",
-    
+    tags:["fondo rosado","correa rosada","diseño brillantes"],
+    categorías:["cuero","formal","mujer"],
     price: 107000,
     imageUrl:
       "https://falabella.scene7.com/is/image/Falabella/gsc_113063821_502968_1?wid=1500&hei=1500&qlt=70",
@@ -145,6 +146,8 @@ export const products = [
     id: 12,
     brand: "Festina",
     description: "Reloj Festina para hombre F205411",
+    tags:["fondo azul","correa gris","números rosados"],
+    categorías:["acero inoxidable","sport","hombre"],
     price: 228990,
     imageUrl:
       "https://falabella.scene7.com/is/image/Falabella/gsc_113036386_504223_1?wid=1500&hei=1500&qlt=70",
