@@ -28,9 +28,10 @@ export default function ProductList(products) {
           <td>${product.stock}</td>
           <td><a class="me-2" href="update-product.html?id=${
             product.id
-          }">${updateIcon}</a><input type="hidden" value=${product.id} />
-    <button type="button" id="remove-product-button-${product.id}">
-      ${deleteIcon}
+          }">${updateIcon}</a><a href="delete-product.html?id=${
+                product.id
+              }">${deleteIcon}</a>
+    
     </button></td>
         </tr>`
           )
